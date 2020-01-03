@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Pokedex
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="array_pokemons?.length>0" class="ion-padding">
+        <ion-slides>
+            <ion-slide *ngFor="let poke of array_pokemons">
+                <ion-card>
+                    <ion-card-header>
+                        <img data-src="{{ poke.profile }}" (click)="pelitocada(peli)">
+                        <ion-card-title>{{ poke.name}}</ion-card-title>
+                        <p>N.{{ poke.id }}</p>
+                    </ion-card-header>
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>
